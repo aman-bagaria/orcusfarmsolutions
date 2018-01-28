@@ -1,8 +1,16 @@
 clc;
 clear all;
 close all;
- count1=0;
- count2=0;
+
+cam=webcam(2)
+
+preview(cam)
+
+closePreview(cam)
+frame=snapshot(cam);
+
+imshow(frame);
+clear('cam');
 [fname path] = uigetfile('*.*','Enter an image');
 fname = strcat(path,fname);
 im = imread(fname);
